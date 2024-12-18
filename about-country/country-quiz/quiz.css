@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  background-color: #5aa4cf;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 37.5em;
+  background-color: #ffffff;
+  padding: 3em 0.5em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 0.8em;
+}
+
+/* Header */
+h3 {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto 2em auto;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #010c39;
+}
+
+/* Drag and Drop Containers */
+.draggable-objects,
+.drop-points {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+  flex-wrap: wrap; /* Membuat elemen membungkus */
+  gap: 1em; /* Memberikan jarak antar elemen */
+}
+
+/* Draggable Images */
+.draggable-image {
+  width: 8em;
+  height: auto;
+  cursor: move;
+  display: flex; /* Flexbox untuk memastikan gambar tetap terpusat */
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%; /* Membuat gambar fleksibel */
+  max-width: 8em; /* Ukuran maksimum gambar */
+  filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
+}
+
+/* Country Answer Boxes */
+.countries {
+  width: 10em;
+  height: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.25em dashed #010c39;
+  border-radius: 0.8em;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Correct Answer Dropped */
+.dropped {
+  padding: 0;
+  background-color: #e5ffc8;
+}
+
+/* Controls */
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #5aa4cf;
+  flex-direction: column;
+  top: 0;
+}
+
+.controls-container button {
+  font-size: 1.12em;
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  border: none;
+  outline: none;
+  color: #010c39;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.controls-container p {
+  color: #ffffff;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+/* Hidden Elements */
+.hide {
+  display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 2em 0.5em;
+    width: 85%;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .draggable-image {
+    width: 6em;
+  }
+
+  .countries {
+    width: 8em;
+    height: 6em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5em 0.5em;
+    width: 95%;
+  }
+
+  h3 {
+    font-size: 0.9em;
+  }
+
+  .draggable-objects,
+  .drop-points {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .draggable-image {
+    width: 5em;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .countries {
+    width: 6.5em;
+    height: 5em;
+  }
+}
